@@ -1,8 +1,8 @@
-package src.main.groovy.db;
+package db
 
 
-import groovy.lang.Closure;
-import groovy.lang.GString;
+import groovy.lang.Closure
+import groovy.lang.GString
 
 import groovy.sql.GroovyRowResult
 import groovy.sql.OutParameter
@@ -31,11 +31,24 @@ public class DatabaseConnection {
     def username
     def password
 
-    public connect() {
+    public connect_sqlserver() {
 
         def driver = Class.forName('net.sourceforge.jtds.jdbc.Driver').newInstance();
         Connection conn = DriverManager.getConnection("jdbc:jtds:sqlserver://$servername/$database;instance=$instance;integratedSecurity=true;selectMethod=direct", username, password);
         return conn;
+    }
+    
+    public connect_sybase() {
+        //code to connect to sybase 
+        
+    }
+    public connect_oracle() {
+        //code to connect to oracle 
+    }
+    
+    public connect_mssql() {
+        //code to connect to MY SQL server 
+        
     }
 
     def Map rowToMap(row) {
