@@ -40,7 +40,9 @@ public class DatabaseConnection {
     
     public connect_sybase() {
         //code to connect to sybase 
-        
+        def driver = Class.forName('net.sourceforge.jtds.jdbc.Driver').newInstance();
+		Connection conn = DriverManager.getConnection("jdbc:jtds:sqlserver://$servername/$database;instance=$instance;selectMethod=direct",username,password);
+		return conn;
     }
     public connect_oracle() {
         //code to connect to oracle 
