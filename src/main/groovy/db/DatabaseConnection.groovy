@@ -46,6 +46,10 @@ public class DatabaseConnection {
     }
     public connect_oracle() {
         //code to connect to oracle 
+		
+		def driver = Class.forName("");
+		Connection conn = DriverManager.getConnection("");
+		return conn;
     }
     
     public connect_mssql() {
