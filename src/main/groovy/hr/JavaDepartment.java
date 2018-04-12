@@ -7,7 +7,8 @@ import java.util.Map;
 public class JavaDepartment {
     private int id;
     private String name;
-    private Map<Integer, Employee> empMap = new HashMap<>();
+   // private Map<Integer, Employee> empMap = new HashMap<>();
+   HashMap<Integer,Employee> empMap = new HashMap<Integer,Employee>();
     
     public int getId() {
         return id;
